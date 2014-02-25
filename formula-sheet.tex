@@ -1,0 +1,215 @@
+\documentclass[10pt,a4paper,landscape]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{color,graphicx,overpic}
+\usepackage{hyperref}
+
+\pdfinfo{
+  /Title (formula-sheet.pdf)
+  /Creator (TeX)
+  /Producer (pdfTeX 1.40.0)
+  /Author (Stefan AAhman)
+  /Subject (IF1613)
+  /Keywords (if1613, sheet, formulas)}
+
+% This sets page margins to .5 inch if using letter paper, and to 1cm
+% if using A4 paper. (This probably isn't strictly necessary.)
+% If using another size paper, use default 1cm margins.
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+    {\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+    }
+
+% Turn off header and footer
+\pagestyle{empty}
+
+% Redefine section commands to use less space
+\makeatletter
+\newcommand{\uv}[1]{\mathbf {\hat{#1}}}
+
+% Dielectric constant
+\newcommand{\dc}{\ensuremath{\varepsilon_0}}
+
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+% Define BibTeX command
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+% -----------------------------------------------------------------------
+
+\begin{document}
+\raggedright
+\footnotesize
+\begin{multicols}{3}
+
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\begin{center}
+  \Large{\underline{IF1613 - Formelsamling}} \\
+\end{center}
+
+\section{Allmänt}
+
+Generaliserade integraler: \\
+$dQ = \rho d\tau \text{, } \ast = \text{volym } \tau$ \\
+$dQ = \rho_s dS \text{, } \ast = \text{yta } S$ \\
+$dQ = \rho_l dl \text{, } \ast = \text{kurva } l$ \\
+
+\subsection{Kartesiskt koordinatsystem}
+$d\vec{l} = dx \cdot \uv{x}+dy \cdot \uv{y}+dz \cdot \uv{z}$ \\
+$d\vec{S} = |dx \cdot dy| \cdot \uv{z}$ \\
+$d\vec{\tau} = |dx \cdot dy \cdot dz|$
+
+\subsection{Cylindriskt koordinatsystem}
+$d\vec{l} = dR \cdot \uv{R} + R d\phi \cdot \uv{\phi} + dz \cdot \uv{z}$ \\
+$d\vec{l} = R d\phi \cdot \uv{\phi}$ (bottenplatta) \\
+$d\vec{S} = |R_0 d\phi dz| \cdot \uv{R}$ \\
+$d\vec{S} = |R d\phi dR| \cdot \uv{z}$ (övre cirkelytan) \\
+$d\vec{\tau} = |dR \cdot Rd\phi \cdot dz|$
+
+\subsection{Sfäriskt koordinatsystem}
+$d\vec{l} = dr \cdot \uv{r} + r d\theta \cdot \uv{\theta} + r \sin{\theta} d\phi \cdot \uv{\phi} $ \\
+$d\vec{S} = |r_0 d\theta \cdot r_0 \sin{\theta} \cdot d\phi| \cdot \uv{r}$ \\
+$d\vec{\tau} = |r^2 \sin{\theta} \cdot dr \cdot d\theta \cdot d\phi|$
+
+\section{Elektrostatik}
+
+\begin{itemize}
+  \item $C$ - Kapacitans [$C/V$]
+  \item $D$ - elektriska flödestätheten [$C/m^2$]
+  \item $E$ = elektrisk fältstyrka [$N/C$]
+  \item $F$ = kraft [$N$]
+  \item $I$ = strömstyrka [$A$]
+  \item $Q$ = elektrisk laddning [$C$]
+\end{itemize}
+
+\subsection{Konstanter}
+Elektriska konstanten (permeabiliteten för fria rymden): \\
+$\varepsilon_0 = 8,8541878 \cdot 10^{-12}$
+
+\subsection{Coulombs lag}
+$Q_0$:s påverkan på $q$:
+\begin{equation} \label{eq:force} \tag{ekv 4:1}
+F_q = \frac{q \cdot Q_0 \cdot \uv{r}}{4 \pi \dc \cdot r^2} [N]
+\end{equation}
+
+\begin{equation} \label{eq:electric-field-intensity} \tag{ekv 4:2}
+E=\lim\limits_{q \to 0}\frac{F_q}{q}=\frac{Q_0 \cdot \uv{r}}{4 \pi \dc \cdot r^2} [N/C]
+\end{equation}
+\begin{equation} \label{eq:electric-field-strength-generalized} \tag{ekv 4:3}
+E=\int\limits_\ast\frac{dQ \cdot \uv{r}}{4 \pi \dc \cdot r^2}
+\end{equation}
+
+\subsection{Guass lag}
+\begin{equation} \label{eq:electric-flux-density} \tag{*}
+D = \frac{Q_0 \cdot \uv{r}}{4 \pi \cdot r^2} [C/m^2]
+\end{equation}
+\begin{equation} \label{eq:guass-theorem} \tag{ekv 2:1}
+\oint\limits_S D \cdot d\vec{S} = Q
+\end{equation}
+
+\subsection{Potential}
+Potential från punktladdning i vakuum:
+\begin{equation} \label{eq:potential} \tag{ekv 4:8}
+V=\frac{Q}{4 \pi \dc r} [V]
+\end{equation}
+\begin{equation} \label{eq:potential-generalized} \tag{*}
+V=\int\limits_\ast\frac{dQ}{4 \pi \dc r}
+\end{equation}
+
+\subsection{Kapacitans}
+\begin{equation} \label{eq:capacitance} \tag{ekv 4:11}
+C=\frac{Q}{V_0} [C/V]
+\end{equation}
+
+Plattkondensator:
+\begin{equation} \label{eq:capacitance-plate-capacitor} \tag{ekv 4:12}
+C=\frac{Q}{V_0}=\frac{A\dc}{d} [C/V]
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ström och strömtäthet}
+\begin{itemize}
+  \item $J$ = strömtäthet [$A/m^2$]
+  \item $\sigma$ = materialkonstant [$(\Omega m)^{-1}$]
+  \item $\rho$ = resistivitet ($1/\sigma$) [$\Omega m$]
+\end{itemize}
+
+\subsection{Strömtäthet}
+\begin{equation} \label{eq:current-density} \tag{ekv 5:1}
+J = nq\vec{v}
+\end{equation}
+Strömmen $I$ genom ytan S:
+\begin{equation} \label{eq:current-surface} \tag{ekv 5:2}
+I = \int\limits_S J \cdot d\vec{S}
+\end{equation}
+Mobiliteten $\mu$:
+\begin{equation} \label{eq:current-density-mobility} \tag{ekv 5:3}
+v = |\vec{v}| = \mu |E| = \mu E
+\end{equation}
+Relationen mellan strömtäthet och elektrisk fältstyrka
+\begin{equation} \label{eq:current-density-electric-field-strength-relation} \tag{ekv 5:4}
+J = \sigma E
+\end{equation}
+Resistans:
+\begin{equation} \label{eq:resistance} \tag{*}
+R = \frac{l}{S\sigma} = \frac{l\rho}{S}
+\end{equation}
+\begin{equation} \label{eq:resistance-capacitance} \tag{*}
+RC = \varepsilon_0\varepsilon_r / \sigma
+\end{equation}
+
+\section{Magnetostatik}
+\begin{itemize}
+  \item $B$ = magnetisk flödestäthet [$T$]
+  \item $H$ = magnetiserade fältstyrkan [$ $]
+  \item $m$ = magnetiskt dipolmoment [$Am^2$]
+  \item $\Phi$ = magnetiska flödet [$T/m^2$]
+\end{itemize}
+
+\subsection{Konstanter}
+Magnetiska konstanten (permeabiliteten för fria rymden): \\
+$\mu_0 = 4\pi \cdot 10^{-7}$
+
+\section{Induktion och elektromagnetisk spänning}
+\section{Magnetiska material}
+\section{Maxwells fullständiga ekvationer}
+
+% You can even have references
+\rule{0.3\linewidth}{0.25pt}
+\scriptsize
+\bibliographystyle{abstract}
+\bibliography{refFile}
+\end{multicols}
+\end{document}
