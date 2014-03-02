@@ -65,7 +65,7 @@
 \begin{document}
 \raggedright
 \footnotesize
-\begin{multicols}{3}
+\begin{multicols}{4}
 
 % multicol parameters
 % These lengths are set only within the two main columns
@@ -85,6 +85,9 @@ Generaliserade integraler: \\
 $dQ = \rho d\tau \text{, } \ast = \text{volym } \tau$ \\
 $dQ = \rho_s dS \text{, } \ast = \text{yta } S$ \\
 $dQ = \rho_l dl \text{, } \ast = \text{kurva } l$ \\
+
+$\uv{x} \cdot \uv{x} = \uv{y} \cdot \uv{y} = \uv{z} \cdot \uv{z} = 1$ \\
+$\uv{x} \cdot \uv{y} = \uv{x} \cdot \uv{z} = \uv{y} \cdot \uv{z} = 0$ \\
 
 \subsection{Kartesiskt koordinatsystem}
 $d\vec{l} = dx \cdot \uv{x}+dy \cdot \uv{y}+dz \cdot \uv{z}$ \\
@@ -107,9 +110,9 @@ $d\vec{\tau} = |r^2 \sin{\theta} \cdot dr \cdot d\theta \cdot d\phi|$
 
 \begin{itemize}
   \item $C$ - Kapacitans [$C/V$]
-  \item $D$ - elektriska flödestätheten [$C/m^2$]
-  \item $E$ = elektrisk fältstyrka [$N/C$]
-  \item $F$ = kraft [$N$]
+  \item $\vec{D}$ - elektriska flödestätheten [$C/m^2$]
+  \item $\vec{E}$ = elektrisk fältstyrka [$N/C$]
+  \item $\vec{F}$ = kraft [$N$]
   \item $I$ = strömstyrka [$A$]
   \item $Q$ = elektrisk laddning [$C$]
 \end{itemize}
@@ -121,66 +124,67 @@ $\varepsilon_0 = 8,8541878 \cdot 10^{-12}$
 \subsection{Coulombs lag}
 $Q_0$:s påverkan på $q$:
 \begin{equation} \label{eq:force} \tag{ekv 4:1}
-F_q = \frac{q \cdot Q_0 \cdot \uv{r}}{4 \pi \dc \cdot r^2} [N]
+\vec{F_q} = \frac{q \cdot Q_0 \cdot \uv{r}}{4 \pi \dc \cdot r^2} [N]
 \end{equation}
 
 \begin{equation} \label{eq:electric-field-intensity} \tag{ekv 4:2}
-E=\lim\limits_{q \to 0}\frac{F_q}{q}=\frac{Q_0 \cdot \uv{r}}{4 \pi \dc \cdot r^2} [N/C]
+\vec{E} = \lim\limits_{q \to 0}\frac{\vec{F_q}}{q}=\frac{Q_0 \cdot \uv{r}}{4 \pi \dc \cdot r^2} [N/C]
 \end{equation}
 \begin{equation} \label{eq:electric-field-strength-generalized} \tag{ekv 4:3}
-E=\int\limits_\ast\frac{dQ \cdot \uv{r}}{4 \pi \dc \cdot r^2}
+\vec{E} = \int\limits_\ast\frac{dQ \cdot \uv{r}}{4 \pi \dc \cdot r^2}
 \end{equation}
 
 \subsection{Guass lag}
 \begin{equation} \label{eq:electric-flux-density} \tag{*}
-D = \frac{Q_0 \cdot \uv{r}}{4 \pi \cdot r^2} [C/m^2]
+\vec{D} = \frac{Q_0 \cdot \uv{r}}{4 \pi \cdot r^2} [C/m^2]
 \end{equation}
 \begin{equation} \label{eq:guass-theorem} \tag{ekv 2:1}
-\oint\limits_S D \cdot d\vec{S} = Q
+\oint\limits_S \vec{D} \cdot d\vec{S} = Q
 \end{equation}
 
 \subsection{Potential}
 Potential från punktladdning i vakuum:
 \begin{equation} \label{eq:potential} \tag{ekv 4:8}
-V=\frac{Q}{4 \pi \dc r} [V]
+V = \frac{Q}{4 \pi \dc r} [V]
 \end{equation}
 \begin{equation} \label{eq:potential-generalized} \tag{*}
-V=\int\limits_\ast\frac{dQ}{4 \pi \dc r}
+V = \int\limits_\ast\frac{dQ}{4 \pi \dc r}
 \end{equation}
 
 \subsection{Kapacitans}
 \begin{equation} \label{eq:capacitance} \tag{ekv 4:11}
-C=\frac{Q}{V_0} [C/V]
+C = \frac{Q}{V_0} [C/V]
 \end{equation}
 
 Plattkondensator:
 \begin{equation} \label{eq:capacitance-plate-capacitor} \tag{ekv 4:12}
-C=\frac{Q}{V_0}=\frac{A\dc}{d} [C/V]
+C = \frac{Q}{V_0}=\frac{A\dc}{d} [C/V]
 \end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Ström och strömtäthet}
 \begin{itemize}
-  \item $J$ = strömtäthet [$A/m^2$]
+  \item $\vec{J}$ = strömtäthet [$A/m^2$]
+  \item $\vec{J_s}$ = ytströmtäthet [$A/m$]
   \item $\sigma$ = materialkonstant [$(\Omega m)^{-1}$]
   \item $\rho$ = resistivitet ($1/\sigma$) [$\Omega m$]
 \end{itemize}
 
 \subsection{Strömtäthet}
 \begin{equation} \label{eq:current-density} \tag{ekv 5:1}
-J = nq\vec{v}
+\vec{J} = nq\vec{v}
 \end{equation}
 Strömmen $I$ genom ytan S:
 \begin{equation} \label{eq:current-surface} \tag{ekv 5:2}
-I = \int\limits_S J \cdot d\vec{S}
+I = \int\limits_S \vec{J} \cdot d\vec{S}
 \end{equation}
 Mobiliteten $\mu$:
 \begin{equation} \label{eq:current-density-mobility} \tag{ekv 5:3}
-v = |\vec{v}| = \mu |E| = \mu E
+v = |\vec{v}| = \mu |\vec{E}| = \mu \vec{E}
 \end{equation}
 Relationen mellan strömtäthet och elektrisk fältstyrka
 \begin{equation} \label{eq:current-density-electric-field-strength-relation} \tag{ekv 5:4}
-J = \sigma E
+\vec{J} = \sigma \vec{E}
 \end{equation}
 Resistans:
 \begin{equation} \label{eq:resistance} \tag{*}
@@ -192,9 +196,11 @@ RC = \varepsilon_0\varepsilon_r / \sigma
 
 \section{Magnetostatik}
 \begin{itemize}
-  \item $B$ = magnetisk flödestäthet [$T$]
-  \item $H$ = magnetiserade fältstyrkan [$ $]
-  \item $m$ = magnetiskt dipolmoment [$Am^2$]
+  \item $\vec{B}$ = magnetisk flödestäthet [$T$]
+  \item $\vec{M}$ = magnetisk susceptibilitet [$A/m$]
+  \item $\vec{H}$ = magnetisk fältstyrka [$A/m$]
+  \item $I_{om}$ = fria strömmen [$A$]
+  \item $\vec{m}$ = magnetiskt dipolmoment [$Am^2$]
   \item $\Phi$ = magnetiska flödet [$T/m^2$]
 \end{itemize}
 
@@ -202,7 +208,65 @@ RC = \varepsilon_0\varepsilon_r / \sigma
 Magnetiska konstanten (permeabiliteten för fria rymden): \\
 $\mu_0 = 4\pi \cdot 10^{-7}$
 
+\subsection{Biot-Savarts lag}
+\begin{equation} \label{eq:biot-savart-law-dl} \tag{ekv 6:1}
+\vec{B} = \oint\limits_C \frac{\mu_0 I \cdot d\vec{l}  \times \uv{r}}{4 \pi r^2} [T]
+\end{equation}
+
+\begin{equation} \label{eq:biot-savart-law-dtau} \tag{ekv 6:3}
+\vec{B} = \int\limits_\tau \frac{\mu_0 \cdot \vec{J} \times \uv{r} \cdot d\tau}{4 \pi r^2} [T]
+\end{equation}
+
+\begin{equation} \label{eq:biot-savart-law-dS} \tag{ekv 6:4}
+\vec{B} = \int\limits_S \frac{\mu_0 \cdot \vec{J_s} \times \uv{r} \cdot dS}{4 \pi r^2} [T]
+\end{equation}
+
+Oändligt långa ledare (symmetri):
+\begin{equation} \label{eq:biot-savart-law-inf} \tag{ekv 6:5}
+\vec{B} = \frac{\mu_0 I}{2 \pi R} \uv{\phi} [T]
+\end{equation}
+
+\subsection{Magnetisk fältstyrka}
+Cirkulationssatsen:
+\begin{equation} \label{eq:circular-loop} \tag{ekv 6:6}
+\oint\limits_C H \cdot d\vec{l} = I_{om} [A]
+\end{equation}
+\[\vec{B} = \mu_0 \cdot \vec{H} \Longrightarrow \oint\limits_C \vec{B} \cdot d\vec{l} = \mu_0 \cdot I_{om}\]
+\[I_{om} = NI \text{, där N är antalet varv}\]
+\[\text{Approximering ger: } Bl = \mu_0NI \Longrightarrow B = \frac{\mu_0NI}{l}\]
+\subsection{Magnetiskt flöde}
+\begin{equation} \label{eq:magnetic-flux} \tag{ekv 6:7}
+\Phi = \int\limits_S \vec{B} \cdot d\vec{S}
+\end{equation}
+
 \section{Induktion och elektromagnetisk spänning}
+
+\begin{itemize}
+  \item $\mathcal{E}$ = elektromotorisk spänning (ems) [$V$]
+\end{itemize}
+\begin{equation} \label{eq:electromotive-force} \tag{ekv 7:1}
+\mathcal{E} = \frac{1}{q} \int\limits_C (\vec{F}-\vec{F_s}) \cdot d\vec{l}
+\end{equation}
+
+\subsection{Faradays lag}
+\begin{equation} \label{eq:faradays-law} \tag{ekv 7:3}
+\mathcal{E} = \int\limits_S - \frac{\partial\vec{B}}{\partial t} \cdot d\vec{S} = - \frac{\partial\Phi}{\partial t}
+\end{equation}
+
+\subsection{Ömsesidig induktans}
+\[\Phi_{12}(t) = M_{12} \cdot i_1(t)\]
+\begin{equation} \label{eq:mutual-inductance} \tag{ekv 7:6}
+\mathcal{E}_2 = -\frac{\partial\Phi_{12}}{\partial t} = -M_{12} \frac{\partial i_1}{\partial t}
+\end{equation}
+
+\subsection{Självinduktans}
+\[\Phi = L \cdot i\]
+\begin{equation} \label{eq:self-inductance} \tag{ekv 7:7}
+\mathcal{E}_2 = -\frac{\partial\Phi}{\partial t} = -L \frac{\partial i}{\partial t}
+\end{equation}
+
+\[\Phi_0 = B \cdot S \text{ och } \Phi = N\Phi_0 \Longrightarrow L = \mu_0 N^2 S / l\]
+
 \section{Magnetiska material}
 \section{Maxwells fullständiga ekvationer}
 
