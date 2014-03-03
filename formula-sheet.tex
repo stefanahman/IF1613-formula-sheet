@@ -81,13 +81,13 @@
 
 \section{Allmänt}
 
+$\uv{x} \cdot \uv{x} = \uv{y} \cdot \uv{y} = \uv{z} \cdot \uv{z} = \uv{r} \cdot \uv{r} = \uv{\phi} \cdot \uv{\phi} = 1$ \\
+$\uv{x} \cdot \uv{y} = \uv{x} \cdot \uv{z} = \uv{y} \cdot \uv{z} = 0$ \\
+
 Generaliserade integraler: \\
 $dQ = \rho d\tau \text{, } \ast = \text{volym } \tau$ \\
 $dQ = \rho_s dS \text{, } \ast = \text{yta } S$ \\
 $dQ = \rho_l dl \text{, } \ast = \text{kurva } l$ \\
-
-$\uv{x} \cdot \uv{x} = \uv{y} \cdot \uv{y} = \uv{z} \cdot \uv{z} = 1$ \\
-$\uv{x} \cdot \uv{y} = \uv{x} \cdot \uv{z} = \uv{y} \cdot \uv{z} = 0$ \\
 
 \subsection{Kartesiskt koordinatsystem}
 $d\vec{l} = dx \cdot \uv{x}+dy \cdot \uv{y}+dz \cdot \uv{z}$ \\
@@ -118,7 +118,7 @@ $d\vec{\tau} = |r^2 \sin{\theta} \cdot dr \cdot d\theta \cdot d\phi|$
 \end{itemize}
 
 \subsection{Konstanter}
-Elektriska konstanten (permeabiliteten för fria rymden): \\
+Elektriska konstanten:
 $\varepsilon_0 = 8,8541878 \cdot 10^{-12}$
 
 \subsection{Coulombs lag}
@@ -135,9 +135,10 @@ $Q_0$:s påverkan på $q$:
 \end{equation}
 
 \subsection{Guass lag}
-\begin{equation} \label{eq:electric-flux-density} \tag{*}
+\begin{equation*} \label{eq:electric-flux-density}
 \vec{D} = \frac{Q_0 \cdot \uv{r}}{4 \pi \cdot r^2} [C/m^2]
-\end{equation}
+\end{equation*}
+
 \begin{equation} \label{eq:guass-theorem} \tag{ekv 2:1}
 \oint\limits_S \vec{D} \cdot d\vec{S} = Q
 \end{equation}
@@ -147,9 +148,10 @@ Potential från punktladdning i vakuum:
 \begin{equation} \label{eq:potential} \tag{ekv 4:8}
 V = \frac{Q}{4 \pi \dc r} [V]
 \end{equation}
-\begin{equation} \label{eq:potential-generalized} \tag{*}
+
+\begin{equation*} \label{eq:potential-generalized}
 V = \int\limits_\ast\frac{dQ}{4 \pi \dc r}
-\end{equation}
+\end{equation*}
 
 \subsection{Kapacitans}
 \begin{equation} \label{eq:capacitance} \tag{ekv 4:11}
@@ -166,6 +168,8 @@ C = \frac{Q}{V_0}=\frac{A\dc}{d} [C/V]
 \begin{itemize}
   \item $\vec{J}$ = strömtäthet [$A/m^2$]
   \item $\vec{J_s}$ = ytströmtäthet [$A/m$]
+  \item $R$ = resistans [$\Omega$]
+  \item $\varepsilon_r$ = relativ permeabilitet
   \item $\sigma$ = materialkonstant [$(\Omega m)^{-1}$]
   \item $\rho$ = resistivitet ($1/\sigma$) [$\Omega m$]
 \end{itemize}
@@ -187,12 +191,12 @@ Relationen mellan strömtäthet och elektrisk fältstyrka
 \vec{J} = \sigma \vec{E}
 \end{equation}
 Resistans:
-\begin{equation} \label{eq:resistance} \tag{*}
+\begin{equation*} \label{eq:resistance}
 R = \frac{l}{S\sigma} = \frac{l\rho}{S}
-\end{equation}
-\begin{equation} \label{eq:resistance-capacitance} \tag{*}
+\end{equation*}
+\begin{equation*} \label{eq:resistance-capacitance}
 RC = \varepsilon_0\varepsilon_r / \sigma
-\end{equation}
+\end{equation*}
 
 \section{Magnetostatik}
 \begin{itemize}
@@ -205,7 +209,7 @@ RC = \varepsilon_0\varepsilon_r / \sigma
 \end{itemize}
 
 \subsection{Konstanter}
-Magnetiska konstanten (permeabiliteten för fria rymden): \\
+Magnetiska konstanten:
 $\mu_0 = 4\pi \cdot 10^{-7}$
 
 \subsection{Biot-Savarts lag}
@@ -232,6 +236,7 @@ Cirkulationssatsen:
 \oint\limits_C H \cdot d\vec{l} = I_{om} [A]
 \end{equation}
 \[\vec{B} = \mu_0 \cdot \vec{H} \Longrightarrow \oint\limits_C \vec{B} \cdot d\vec{l} = \mu_0 \cdot I_{om}\]
+För en rak lång spole:
 \[I_{om} = NI \text{, där N är antalet varv}\]
 \[\text{Approximering ger: } Bl = \mu_0NI \Longrightarrow B = \frac{\mu_0NI}{l}\]
 \subsection{Magnetiskt flöde}
@@ -240,10 +245,10 @@ Cirkulationssatsen:
 \end{equation}
 
 \section{Induktion och elektromagnetisk spänning}
-
 \begin{itemize}
   \item $\mathcal{E}$ = elektromotorisk spänning (ems) [$V$]
 \end{itemize}
+
 \begin{equation} \label{eq:electromotive-force} \tag{ekv 7:1}
 \mathcal{E} = \frac{1}{q} \int\limits_C (\vec{F}-\vec{F_s}) \cdot d\vec{l}
 \end{equation}
@@ -265,10 +270,38 @@ Cirkulationssatsen:
 \mathcal{E}_2 = -\frac{\partial\Phi}{\partial t} = -L \frac{\partial i}{\partial t}
 \end{equation}
 
-\[\Phi_0 = B \cdot S \text{ och } \Phi = N\Phi_0 \Longrightarrow L = \mu_0 N^2 S / l\]
+För en rak lång spole:
+\[\Phi_0 = B \cdot S \text{ och } \Phi = N\Phi_0\]
+\[\Phi = \mu_0 N^2 S i / l \Longrightarrow L = \mu_0 N^2 S / l\]
 
 \section{Magnetiska material}
-\section{Maxwells fullständiga ekvationer}
+\begin{itemize}
+  \item $R$ = magnetisk reluktans (motstånd) [$1/H$]
+  \item $\mu_r$ = relativ permeabilitet
+\end{itemize}
+
+\subsection{Magnetisk susceptibilitet}
+\begin{equation} \label{eq:flux-force} \tag{ekv 8:4}
+\vec{B} = \mu_0 \mu_r \vec{H}
+\end{equation}
+
+\subsection{Magnetiska kretsar}
+
+\[H_1 l_1 + H_2 l_2 + \dots + H_n l_n = NI\]
+där $N$ är antal varv runt spolen där strömmen är $I$
+\[\Phi_0 = B_i S_i \text{ och } \Phi = \Phi_0 N\]
+där $N$ är antal varv runt spolen där flödet är $\Phi$
+\[B_i = \mu_0 \mu_{ri} H_i\]
+
+Insatt i cirkulationssatsen (generaliserad):
+\begin{equation} \label{eq:circular-loop-inf-generalized} \tag{ekv 8:5}
+\Phi \left[ \sum\limits_i \frac{l_i}{\mu_0 \mu_{ri} S_i} \right] = NI
+\end{equation}
+
+Reluktans
+\begin{equation} \label{eq:reluctance} \tag{ekv 8:6}
+R_i = \frac{l_i}{\mu_0 \mu_{ri} S_i}
+\end{equation}
 
 % You can even have references
 \rule{0.3\linewidth}{0.25pt}
