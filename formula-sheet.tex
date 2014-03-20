@@ -308,6 +308,74 @@ Reluktans
 R_i = \frac{l_i}{\mu_0 \mu_{ri} S_i}
 \end{equation}
 
+\section{Elektromagnetiska vågor}
+\begin{itemize}
+  \item $s$ = varierar harmoniskt med en lägeskoord.
+  \item $s_0$ = amplitud
+  \item $\lambda$ = våglängd
+\end{itemize}
+\subsection{Plan våg}
+\begin{equation*} \label{eq:plane-wave}
+s=s_0 \sin{(kx-\omega t)}
+\end{equation*}
+\begin{equation} \label{eq:plane-wave-electric-magnetic} \tag{ekv 10:1}
+\begin{cases}
+\vec{E}=E_0 \sin{(kx-\omega t)}\uv{y} \\
+\vec{B}=B_0 \sin{(kx-\omega t)}\uv{z}
+\end{cases}
+\end{equation}
+\[k=2\pi/\lambda \text{, } \omega = 2\pi v / \lambda \Rightarrow v=\omega/k\]
+
+\section{Optik}
+\begin{itemize}
+  \item $c_0$ = ljusets hastighet (vakuum)
+  \item $c_m$ = ljusets hastighet
+  \item $E_{oi}$ = infallande vinkel
+  \item $E_{or}$ = reflekterande vinkel
+  \item $E_{ob}$ = brytningsvinkel
+  \item $I$ = intensitet
+  \item $n$ = brytningsindex
+\end{itemize}
+Intensitet hos plan elektromagnetisk våg vakuum ($\cdot n$ för dielektrum):
+\begin{equation} \label{eq:intensity-plane} \tag{ekv 11:7a}
+I=\varepsilon_0 c_0 E^2_0 \sin^2{(kx-\omega t)} \uv{x}
+\end{equation}
+\[n=c_0 / c_m = \sqrt{\varepsilon_r}\]
+Tidsmedelvärdet:
+\[<I> = \frac{1}{2}\varepsilon_0 c_0 E_0^2 \uv{x}\]
+\subsection{Reflektioner}
+\begin{equation*} \label{eq:snells}
+n_1 \sin{i} = n_2 \sin{b}
+\end{equation*}
+Totalreflektion:
+\[\sin{\theta}=\frac{n_2}{n_1} \Rightarrow \theta = \arcsin{\left(\frac{n_2}{n_1}\right)}\]
+Fresnels ekvationer:
+\begin{equation} \label{eq:fresnels-equation} \tag{ekv 11:5}
+\begin{matrix}
+E_{or}=E_{oi} \left(\frac{n_2 \cos{i} - n_1 \cos{b}}{n_2 \cos{i} + n_1 \cos{b}}\right) \\
+E_{ob}=E_{oi} \left(\frac{2(n_1 \cos{i})}{n_2 \cos{i} + n_1 \cos{b}}\right)
+\end{matrix}
+\end{equation}
+
+För vinkelrätt infall mot infallsplanet
+\begin{equation} \label{eq:fresnels-equation-perpendicular} \tag{ekv 11:7}
+\begin{matrix}
+E_{or}=-E_{oi} \left(\frac{n_1 \cos{i} - n_2 \cos{b}}{n_1 \cos{i} + n_2 \cos{b}}\right) \\
+E_{ob}=E_{oi} \left(\frac{2(n_1 \cos{i})}{n_1 \cos{i} + n_2 \cos{b}}\right)
+\end{matrix}
+\end{equation}
+\subsection{Spalter}
+Intensitet från spalt:
+\begin{equation} \label{eq:intensity-column} \tag{ekv 11:20}
+I_{spalt}=I_{spalt}(0)\frac{\sin^2{u}}{u^2}
+\end{equation}
+\[\theta=0 \Rightarrow I_{spalt}(0) = N^2I_o \]
+\[u=N\delta/2 = \pi D \sin{\theta} / \lambda\]
+Intensitet från gitter:
+\begin{equation} \label{eq:intensity-gitter} \tag{ekv 11:21}
+I_{gitter}=I_{spalt}(0)\left(\frac{\sin^2{u}}{u^2}\right)\left(\frac{\sin^2{(N\delta/2)}}{\sin^2{(\delta/2)}}\right)
+\end{equation}
+
 % You can even have references
 \rule{0.3\linewidth}{0.25pt}
 \scriptsize
